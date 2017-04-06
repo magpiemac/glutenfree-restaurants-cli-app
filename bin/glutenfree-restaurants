@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/gluten_free_restaurants'
+
+GlutenFreeRestaurants::CLI.new.call
