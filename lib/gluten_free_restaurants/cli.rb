@@ -15,15 +15,19 @@ class GlutenFreeRestaurants::CLI
   end
 
   def restaurant_info
-    puts "Enter the number of the restaurant that you would like more information on or type exit:"
     input = nil
     while input != "exit"
-      input = gets.strip
+      puts "Enter the number of the restaurant that you would like more informationo on or type list or exit:"
+      input = gets.strip.downcase
       case input
       when "1"
         puts "More info on restaurant 1..."
       when "2"
         puts "More info on restaurant 2..."
+      when "list"
+        list_restaurants
+      else
+        puts "Invalid entry. Please type in list or exit."
       end
     end
   end
