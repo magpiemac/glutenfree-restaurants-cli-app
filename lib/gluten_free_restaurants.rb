@@ -1,3 +1,4 @@
+require 'open-uri'
 require 'nokogiri'
 
 require_relative "./gluten_free_restaurants/version.rb"
