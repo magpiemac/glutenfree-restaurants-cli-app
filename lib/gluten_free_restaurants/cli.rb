@@ -9,21 +9,21 @@ class GlutenFreeRestaurants::CLI
     goodbye
   end
 
-  def list_restaurants    
+  def list_restaurants
+    puts "Gluten Free Restaurants in Annapolis, MD"
     @restaurants = GlutenFreeRestaurants::Restaurants.today
+    @restaurants.each.with_index(1) do |restaurants, index|
+      puts "#{index}. #{restaurant.name} #{restaurant.address}"
   end
 
   def restaurant_info
     input = nil
     while input != "exit"
-      puts "Enter the number of the restaurant that you would like more informationo on or type list or exit:"
+      puts "Enter the number of the restaurant that you would like more information on or type list or exit:"
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "More info on restaurant 1..."
-      when "2"
-        puts "More info on restaurant 2..."
-      when "list"
+      if input.to_i > 0
+        puts @restaurants[input.to_i-1]
+      elsif input.to_i == "list"
         list_restaurants
       else
         puts "Invalid entry. Please type in list or exit."
