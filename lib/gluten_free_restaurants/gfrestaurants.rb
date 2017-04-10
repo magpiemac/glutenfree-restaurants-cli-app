@@ -1,3 +1,5 @@
+require 'pry'
+
 class GlutenFreeRestaurants::Restaurants
 
   attr_accessor :name, :location, :rating, :features, :url
