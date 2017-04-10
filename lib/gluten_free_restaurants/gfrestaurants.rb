@@ -9,11 +9,18 @@ class GlutenFreeRestaurants::Restaurants
 
   def self.scrape_restaurants
     restaurants = []
+
+    restaurants << self.scrape_restaurants
+
     #Go to website, enter location
     #extract restaurant information
     #instatniate a restaurant
 
     restaurants
   end
+
+  def self.scrape
+    doc = Nokogiri::HTML(open("http://www.findmeglutenfree.com"))
+    binding.pry
 
 end
