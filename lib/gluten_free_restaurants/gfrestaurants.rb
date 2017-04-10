@@ -22,7 +22,8 @@ class GlutenFreeRestaurants::Restaurants
   end
 
   def self.scrape
-    doc = Nokogiri::HTML(open("http://www.findmeglutenfree.com"))
-    binding.pry
+    doc = Nokogiri::HTML(open("http://www.findmeglutenfree.com/search?a=Annapolis%2C%20MD&lat=38.9784&lng=-76.4922&ga=Annapolis%2C%20MD"))
+    name = doc.search("h1.li.data-name").text
+    #binding.pry
   end
 end

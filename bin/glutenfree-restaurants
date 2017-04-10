@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
+require "gluten_free_restaurants"
+require "nokogiri"
 
 require_relative '../lib/gluten_free_restaurants'
 
