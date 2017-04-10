@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'gluten_free_restaurants/version'
+require_relative './lib/gluten_free_restaurants/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "gluten_free_restaurants"
@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Shannon McCormack"]
   spec.email         = ["shannonkmc@hotmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Gluten Free Restaurants Annapolis, MD"
+  spec.description   = "Provides details on gluten free restaurants in Annapolis, MD."
+  spec.homepage      = "https://github.com/magpiemac/glutenfree-restaurants-cli-app"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
