@@ -9,10 +9,7 @@ class GlutenFreeRestaurants::CLI
     goodbye
   end
 
-  def list_restaurants
-    puts "1. Giant Foods"
-    puts "2. Jerry's Subs and Pizza"
-    DOC
+  def list_restaurants    
     @restaurants = GlutenFreeRestaurants::Restaurants.today
   end
 
