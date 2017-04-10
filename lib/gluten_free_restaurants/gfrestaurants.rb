@@ -1,5 +1,7 @@
 class GlutenFreeRestaurants::Restaurants
 
+  attr_accessor :name, :location, :rating, :features, :url 
+
   def self.today
     #Should return instances of the restuarants
     #puts "1. Giant Foods"
