@@ -1,27 +1,19 @@
 class GlutenFreeRestaurants::Restaurants
 
-  attr_accessor :name, :location, :rating, :features, :url 
+  attr_accessor :name, :location, :rating, :features, :url
 
   def self.today
-    #Should return instances of the restuarants
-    #puts "1. Giant Foods"
-    #puts "2. Jerry's Subs and Pizza"
+    #Scrape and return restaurant_info
+    self.scrape_restaurants
+  end
 
-    rest_1 = self.new
-    rest_1.name = "Vida Taco Bar"
-    rest_1.location = "200 Main Street, Annapolis, MD 21401"
-    rest_1.rating = "4 stars"
-    rest_1.features = "Celiac Friendly, Tacos, Restaurant"
-    rest_1.url = "http://www.findmeglutenfree.com/biz/vida-taco-bar/4555613261004800"
+  def self.scrape_restaurants
+    restaurants = []
+    #Go to website, enter location
+    #extract restaurant information
+    #instatniate a restaurant
 
-    rest_2 = self.new
-    rest_2.name = "Annapolis Ice Cream Company"
-    rest_2.location = "196 Main St, Annapolis, MD 21401"
-    rest_2.rating = "4 stars"
-    rest_2.features = "Dessert, Allergen List, Ice Cream"
-    rest_2.url = "http://www.findmeglutenfree.com/biz/annapolis-ice-cream-company/6161587895533568"
-
-    [rest_1, rest_2]
+    [restaurants]
   end
 
 end
