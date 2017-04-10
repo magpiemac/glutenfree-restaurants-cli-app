@@ -13,7 +13,7 @@ class GlutenFreeRestaurants::Restaurants
     #extract restaurant information
     #instatniate a restaurant
 
-    [restaurants]
+    restaurants
   end
 
 end
