@@ -5,7 +5,6 @@ class GlutenFreeRestaurants::CLI
   def call
     list_restaurants
     restaurant_info
-    goodbye
   end
 
   def list_restaurants
@@ -21,13 +20,14 @@ class GlutenFreeRestaurants::CLI
     while input != "exit"
       puts "Enter the number of the restaurant that you would like more information on or type list or exit:"
       input = gets.strip.downcase
-      if input.to_i > 0
+     if input.to_i > 0
         the_restaurant = @restaurants[input.to_i-1]
         puts "#{the_restaurant.name} #{the_restaurant.location}\n#{the_restaurant.distance}\n#{the_restaurant.features}\n#{the_restaurant.cost}\n"
-      elsif input == "list"
+     elsif input == "list"
         list_restaurants
-      else
-        puts "Invalid entry. Please type in list or exit."
+     elsif input == "exit"
+        goodbye
+     else puts "Invalid entry. Please type in list or exit."
       end
     end
   end
