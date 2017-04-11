@@ -2,7 +2,7 @@ require 'pry'
 
 class GlutenFreeRestaurants::Restaurants
 
-  attr_accessor :name, :location, :rating, :features, :url
+  attr_accessor :name, :location, :cost, :features, :url
 
   def self.today
     #Scrape and return restaurant_info
@@ -26,6 +26,7 @@ class GlutenFreeRestaurants::Restaurants
     name = doc.search("a.data-details-url")[0].text
     location = doc.search("h4.data-address")[0].text
     features = doc.search("h3")[0].text
+    cost = doc.search("span.pull-right.biz-price")[0].text
     #url = doc.search("a.href").text
     #binding.pry
   end
