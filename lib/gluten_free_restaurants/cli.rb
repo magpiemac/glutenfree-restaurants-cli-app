@@ -23,7 +23,7 @@ class GlutenFreeRestaurants::CLI
       input = gets.strip.downcase
       if input.to_i > 0
         the_restaurant = @restaurants[input.to_i-1]
-        puts "#{the_restaurant.name} #{the_restaurant.location}"
+        puts "#{the_restaurant.name} #{the_restaurant.location}\n#{the_restaurant.distance}\n#{the_restaurant.features}\n#{the_restaurant.cost}\n"
       elsif input == "list"
         list_restaurants
       else
