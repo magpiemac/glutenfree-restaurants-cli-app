@@ -9,10 +9,10 @@ class GlutenFreeRestaurants::CLI
 
   def list_restaurants
     puts "Welcome to Gluten Free Restaurants in Annapolis, MD:"
-    @restaurants = GlutenFreeRestaurants::Restaurants.today
-    @restaurants.each.with_index(1) do |restaurants, i|
+    @restaurants = GlutenFreeRestaurants::Restaurant.today
+    @restaurants.each.with_index(1) do |restaurant, i|
       puts "#{i}. #{restaurants.name}"
-   end
+    end
   end
 
   def restaurant_info
@@ -20,14 +20,14 @@ class GlutenFreeRestaurants::CLI
     while input != "exit"
       puts "Enter the number of the restaurant that you would like more information on or type list or exit:"
       input = gets.strip.downcase
-     if input.to_i > 0
+      if input.to_i > 0
         the_restaurant = @restaurants[input.to_i-1]
         puts "#{the_restaurant.name} #{the_restaurant.location}\n#{the_restaurant.distance}\n#{the_restaurant.features}\n#{the_restaurant.cost}\n"
-     elsif input == "list"
+      elsif input == "list"
         list_restaurants
-     elsif input == "exit"
+      elsif input == "exit"
         goodbye
-     else puts "Invalid entry. Please type in list or exit."
+      else puts "Invalid entry. Please type in list or exit."
       end
     end
   end
