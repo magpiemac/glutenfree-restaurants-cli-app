@@ -22,8 +22,8 @@ class GlutenFreeRestaurants::CLI
       puts "Enter the number of the restaurant that you would like more information on or type list or exit:"
       input = gets.strip.downcase
       if input.to_i > 0
-        the_restaurant = restaurant[input.to_i-1]
-        puts "#{the_restaurant.name} #{the_restaurant.location}\n#{the_restaurant.distance}\n#{the_restaurant.features}\n#{the_restaurant.cost}\n"
+        restaurant = GlutenFreeRestaurants::Restaurant.find(input.to_i-1)
+        puts "#{restaurant.name} #{restaurant.location}\n#{restaurant.distance}\n#{restaurant.features}\n#{restaurant.cost}\n"
       elsif input == "list"
         list_restaurants
       elsif input == "exit"
