@@ -16,14 +16,15 @@ class GlutenFreeRestaurants::Restaurant
 
   def self.scrape_new
     doc = Nokogiri::HTML(open("https://www.findmeglutenfree.com/search?a=Annapolis%2C%20MD&lat=38.9784&lng=-76.4922&ga=Annapolis%2C%20MD"))
-    #doc.css("div.search-list-title").each do |doc|
+    doc.css(".search-list-item-content").each do |doc|
     restaurant = self.new
-    restaurant.name = doc.search("a.data-details-url")[0].text
-    restaurant.location = doc.search("h4.data-address")[0].text
-    restaurant.features = doc.search("h3")[0].text
-    restaurant.cost = doc.search("span.pull-right.biz-price")[0].text
-    restaurant.distance = doc.search("span.distance")[0].text
+    restaurant.name = doc.css("a.data-details-url")[0].text
+    restaurant.location = doc.css("h4.data-address")[0].text
+    restaurant.features = doc.css("h3")[0].text
+    restaurant.cost = doc.css("span.pull-right.biz-price")[0].text
+    restaurant.distance = doc.css("span.distance")[0].text
     restaurant
-  #end
+    #binding.pry
+  end
  end
 end
