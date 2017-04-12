@@ -3,7 +3,7 @@
 class GlutenFreeRestaurants::CLI
 
   def call
-    GlutenFreeRestaurants::Restaurant.new.scrape_new
+    GlutenFreeRestaurants::Scraper.new.make_restaurants
     list_restaurants
     restaurant_info
   end
