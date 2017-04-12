@@ -8,7 +8,6 @@ class GlutenFreeRestaurants::CLI
   end
 
   def list_restaurants
-    puts ""
     puts "Welcome to Gluten Free Restaurants in Annapolis, MD:"
     @restaurants = GlutenFreeRestaurants::Restaurant.today
     @restaurants.each.with_index(1) do |restaurant, i|

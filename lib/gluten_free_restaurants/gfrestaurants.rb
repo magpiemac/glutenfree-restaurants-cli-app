@@ -4,6 +4,18 @@ class GlutenFreeRestaurants::Restaurant
 
   attr_accessor :name, :location, :features, :cost, :distance
 
+  def initialize(name = nil, location = nil, features = nil, cost = nil, distance = nil)
+    @name = name
+    @location = location
+    @features = features
+    @cost = cost
+    @distance = distance
+  end
+
+  def self.all
+    @@all ||= scrape_restaurants
+  end
+  
   def self.today
     self.scrape_restaurants
   end
@@ -14,7 +26,7 @@ class GlutenFreeRestaurants::Restaurant
     restaurants
   end
 
-  def self.scrape_new
+  def self.scrape_restaurant
     doc = Nokogiri::HTML(open("https://www.findmeglutenfree.com/search?a=Annapolis%2C%20MD&lat=38.9784&lng=-76.4922&ga=Annapolis%2C%20MD"))
     doc.css(".search-list-item-content").each do |doc|
     restaurant = self.new
