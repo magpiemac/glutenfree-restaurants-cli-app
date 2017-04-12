@@ -11,7 +11,7 @@ class GlutenFreeRestaurants::CLI
     puts "Welcome to Gluten Free Restaurants in Annapolis, MD:"
     @restaurants = GlutenFreeRestaurants::Restaurant.today
     @restaurants.each.with_index(1) do |restaurant, i|
-      puts "#{i}. #{restaurants.name}"
+      puts "#{i}. #{restaurant.name}"
     end
   end
 
