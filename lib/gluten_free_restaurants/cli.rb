@@ -16,14 +16,25 @@ class GlutenFreeRestaurants::CLI
     end
   end
 
+  def print_restaurant(restaurant)
+    puts ""
+    puts "Restaurant: #{restaurant.name}"
+    puts "Address: #{restaurant.location}"
+    puts "Distance: #{restaurant.distance}"
+    puts "Features: #{restaurant.features}"
+    puts "Cost: #{restaurant.cost}"
+    puts ""
+  end
+
   def restaurant_info
     input = nil
     while input != "exit"
+      puts ""
       puts "Enter the number of the restaurant that you would like more information on or type list or exit:"
       input = gets.strip.downcase
       if input.to_i > 0
         restaurant = GlutenFreeRestaurants::Restaurant.find(input.to_i-1)
-        puts "#{restaurant.name} #{restaurant.location}\n#{restaurant.distance}\n#{restaurant.features}\n#{restaurant.cost}\n"
+        print_restaurant(restaurant)
       elsif input == "list"
         list_restaurants
       elsif input == "exit"
