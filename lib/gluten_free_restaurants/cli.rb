@@ -3,10 +3,13 @@ class GlutenFreeRestaurants::CLI
 
   def call
     GlutenFreeRestaurants::Scraper.new.make_restaurants
+    restaurant_info
   end
 
   def list_restaurants
+    puts "=" * 52
     puts "Welcome to Gluten Free Restaurants in Annapolis, MD:".colorize(:light_cyan)
+    puts "=" * 52
     GlutenFreeRestaurants::Restaurant.all.each.with_index(1) do |restaurant, i|
       puts "#{i}. #{restaurant.name}".colorize(:yellow)
     end
@@ -27,7 +30,7 @@ class GlutenFreeRestaurants::CLI
     input = nil
     while input != "exit"
       puts ""
-      puts "Which restaurant would you like more information on? Please enter a number.".colorize(:light_cyan)
+      puts "Which restaurant would you like more information on? Please enter the number of the restaurant.".colorize(:light_cyan)
       puts "You may also enter 'list' to see the restaurants again or enter 'exit' to leave the program.".colorize(:light_cyan)
       input = gets.strip
       if input == "list"
