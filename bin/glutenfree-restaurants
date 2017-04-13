@@ -2,8 +2,6 @@
 
 require 'bundler/setup'
 require 'gluten_free_restaurants'
-require 'nokogiri'
-require 'colorize'
 
 require_relative '../lib/gluten_free_restaurants'
 
