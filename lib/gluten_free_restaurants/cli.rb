@@ -1,4 +1,3 @@
-#Our CLI Controller
 
 class GlutenFreeRestaurants::CLI
 
@@ -10,17 +9,17 @@ class GlutenFreeRestaurants::CLI
   def list_restaurants
     puts "Welcome to Gluten Free Restaurants in Annapolis, MD:".colorize(:light_cyan)
     GlutenFreeRestaurants::Restaurant.all.each.with_index(1) do |restaurant, i|
-      puts "#{i}. #{restaurant.name}"colorize(:yellow)
+      puts "#{i}. #{restaurant.name}".colorize(:yellow)
     end
   end
 
   def print_restaurant(restaurant)
     puts ""
-    puts "Restaurant: #{restaurant.name}"
-    puts "Address: #{restaurant.location}"
-    puts "Distance: #{restaurant.distance}"
-    puts "Features: #{restaurant.features}"
-    puts "Cost: #{restaurant.cost}"
+    puts "Restaurant: #{restaurant.name}".colorize(:yellow)
+    puts "Address: #{restaurant.location}".colorize(:yellow)
+    puts "Distance: #{restaurant.distance}".colorize(:yellow)
+    puts "Features: #{restaurant.features}".colorize(:yellow)
+    puts "Cost: #{restaurant.cost}".colorize(:yellow)
     puts ""
   end
 
@@ -29,8 +28,8 @@ class GlutenFreeRestaurants::CLI
     input = nil
     while input != "exit"
       puts ""
-      puts "Which restaurant would you like more information on? Please enter a number."
-      puts "Enter list to see the restaurants again or enter exit to leave the program."
+      puts "Which restaurant would you like more information on? Please enter a number.".colorize(:light_cyan)
+      puts "Enter list to see the restaurants again or enter exit to leave the program.".colorize(:light_cyan)
       input = gets.strip
       if input == "list"
         list_restaurants
@@ -39,12 +38,12 @@ class GlutenFreeRestaurants::CLI
         print_restaurant(restaurant)
       elsif input == "exit"
         goodbye
-      else puts "Invalid entry. Please type in list or exit."
+      else puts "Invalid entry. Please type in list or exit.".colorize(:light_cyan)
       end
     end
   end
 
   def goodbye
-    puts "Thank you. Come back soon."
+    puts "Thank you. Come back soon.".colorize(:light_cyan)
   end
 end
