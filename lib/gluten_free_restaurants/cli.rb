@@ -29,7 +29,7 @@ class GlutenFreeRestaurants::CLI
     while input != "exit"
       puts ""
       puts "Which restaurant would you like more information on? Please enter a number.".colorize(:light_cyan)
-      puts "Enter list to see the restaurants again or enter exit to leave the program.".colorize(:light_cyan)
+      puts "You may also enter 'list' to see the restaurants again or enter 'exit' to leave the program.".colorize(:light_cyan)
       input = gets.strip
       if input == "list"
         list_restaurants
@@ -37,13 +37,9 @@ class GlutenFreeRestaurants::CLI
         restaurant = GlutenFreeRestaurants::Restaurant.find(input.to_i)
         print_restaurant(restaurant)
       elsif input == "exit"
-        goodbye
-      else puts "Invalid entry. Please type in list or exit.".colorize(:light_cyan)
+        puts "Thank you. Come back soon.".colorize(:light_cyan)
+      else puts "Invalid entry. Please type in list or exit.".colorize(:red)
       end
     end
-  end
-
-  def goodbye
-    puts "Thank you. Come back soon.".colorize(:light_cyan)
   end
 end
