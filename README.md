@@ -4,18 +4,6 @@ This Ruby Gem provides a CLI to view 40 restaurants in Annapolis, MD that serve 
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'glutenfree_restaurants'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install glutenfree_restaurants
 
 ## Usage
