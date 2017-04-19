@@ -37,7 +37,12 @@ class GlutenFreeRestaurants::CLI
         list_restaurants
       elsif input.to_i > 0
         restaurant = GlutenFreeRestaurants::Restaurant.find(input.to_i)
-        print_restaurant(restaurant)
+        #binding.pry
+        if restaurant
+          print_restaurant(restaurant)
+        else
+          puts "Invalid entry. Please type in list or exit.".colorize(:red)
+        end
       elsif input == "exit"
         puts "Thank you. Come back soon.".colorize(:light_cyan)
       else puts "Invalid entry. Please type in list or exit.".colorize(:red)

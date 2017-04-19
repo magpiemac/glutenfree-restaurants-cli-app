@@ -5,16 +5,6 @@ class GlutenFreeRestaurants::Restaurant
 
   @@all = []
 
-  def self.new_from_index_page(doc)
-    self.new(
-    doc.search("a.data-details-url")[0].text,
-    doc.search("h4.data-address")[0].text,
-    doc.search("h3")[0].text,
-    doc.search("span.pull-right.biz-price")[0].text,
-    doc.search("span.distance")[0].text
-      )
-  end
-
   def initialize(name = nil, location = nil, features = nil, cost = nil, distance = nil)
     @name = name
     @location = location
@@ -30,5 +20,9 @@ class GlutenFreeRestaurants::Restaurant
 
   def self.find(id)
     self.all[id-1]
+  end
+
+  def self.find_by_cost(cost)
+    @@all.select {|restaurant| cost == restaurant.cost}
   end
 end
