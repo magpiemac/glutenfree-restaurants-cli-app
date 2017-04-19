@@ -6,11 +6,11 @@ class GlutenFreeRestaurants::Scraper
 
   def scrape_new
     self.get_page.css(".search-list-item-content")
- end
+  end
 
   def make_restaurants
     scrape_new.each do |doc|
     GlutenFreeRestaurants::Restaurant.new_from_index_page(doc)
-   end
+  end
  end
 end

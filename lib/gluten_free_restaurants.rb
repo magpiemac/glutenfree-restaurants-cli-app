@@ -3,7 +3,7 @@ require 'pry'
 require 'nokogiri'
 require 'colorize'
 
-require_relative "./gluten_free_restaurants/version.rb"
-require_relative "./gluten_free_restaurants/cli.rb"
-require_relative "./gluten_free_restaurants/gfrestaurants.rb"
-require_relative "./gluten_free_restaurants/scraper.rb"
+require_relative '../lib/gluten_free_restaurants/version'
+require_relative '../lib/gluten_free_restaurants/cli'
+require_relative '../lib/gluten_free_restaurants/gfrestaurants'
+require_relative '../lib/gluten_free_restaurants/scraper'
